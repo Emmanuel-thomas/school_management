@@ -9,9 +9,7 @@ def add_course(request):
         context["form"] = form
         return render(request, "addcourse.html", context)
     elif request.method == 'POST':
-        context = {}
         form = CourseAddForm(request.POST)
-        context["form"] = form
         if form.is_valid():
             course_name = form.cleaned_data["course"]
             print(course_name)
@@ -26,7 +24,6 @@ def add_batch(request):
         context["form"] = form
         return render(request, "addbatch.html", context)
     elif request.method == 'POST':
-        print("hi")
         form = AddBatchForm(request.POST)
         if form.is_valid():
             batch_name = form.cleaned_data["batch_name"]
@@ -34,10 +31,7 @@ def add_batch(request):
             course_name = form.cleaned_data["course_name"]
             print(batch_name, starting_date, course_name)
 
-            return render(request, "headmaster/addbatch.html")
-        else:
-            print("form is not valid")
-            return render(request, "headmaster/addbatch.html")
+            return redirect("headmasterhome")
 
 
 def review_batch(request):
