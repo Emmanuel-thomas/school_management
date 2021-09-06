@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>course add </h1>
+
+
+<div>
+
+        <form action="" method="post">
+             {% csrf_token %}
+             {{form.as_p}}
+        <div>
+            <input type="submit" value="add course">
+        </div>
+
+</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>batch add </h1>
+
+
+<div>
+    <div>
+        <form action="" method="post">
+             {% csrf_token %}
+             {{form.as_p}}
+         </form>
+
+    </div>
+    <input type="submit" value="add batch">
+
+</div>
+
+</body>
+</html>
