@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('headmaster/', include("headmaster.urls")),
     path('teacher/', include("teacher.urls")),
-    path('', lambda request: render(request,"home.html"), name="home"),
+    path('', lambda request: render(request, "home.html"), name="home"),
+    path('student/', include("student.urls")),
 ]
